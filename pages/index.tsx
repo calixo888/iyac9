@@ -2,32 +2,25 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Navbar from '../components/Navbar'
+import Grid from '../components/Grid'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="bg">
+      // Background svg, potential animation
+
+      <Navbar />
+
+      <div className="mural">
+        // digitalized mural w/ tooltips
+      </div>
       
-    <div>
-      <h1>Hello world!</h1>
-    </div>
-      <div className="h-screen bg-blue-100 justify-center items-center flex">
-        <h1 className="text-xl font-semibold">Header</h1>
-      </div>
+      // Mural Timelapse video embed
 
-      <div className="h-screen bg-green-100 justify-center items-center flex">
-        <h1 className="text-xl font-semibold">Grid of IY9 Profiles</h1>
-      </div>
+      <Grid /> // overflow
 
-      <div className="h-screen bg-red-100 justify-center items-center flex">
-        <h1 className="text-xl font-semibold">Digitized Mural w/ tooltips</h1>
-      </div>
-
-      <div className="h-screen bg-yellow-100 justify-center items-center flex">
-        <h1 className="text-xl font-semibold">Mural Timelapse video embed</h1>
-      </div>
     </div>
   )
 }
-
-export default Home;
 
