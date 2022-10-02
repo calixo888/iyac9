@@ -31,19 +31,43 @@ export default function Home() {
       >
         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
           <React.Fragment>
-            <div className="z-10 bg-white fixed left-0 top-0">
-              <p>IYA C9</p>
+            <div className="z-10 fixed left-3 top-3">
+              <div className="bg-white py-2 px-5 rounded-full border-gray-1 shadow-lg text-lg">☁️ IYA<strong>C9</strong></div>
             </div>
-            <div className="z-10 bg-white fixed right-0 top-0">
-              <p>mural, people</p>
+            <div className="z-10 fixed right-3 top-3">
+              <div className="flex flex-row items-center">
+                <div className="bg-white py-2 px-5 rounded-full border-gray-1 shadow-lg text-md ml-3">Mural</div>
+                <div className="bg-white py-2 px-5 rounded-full border-gray-1 shadow-lg text-md ml-3">People</div>
+              </div>
             </div>
-            <div className="z-10 bg-white fixed left-0 bottom-0">
-              <p>socials</p>
+            <div className="z-10 fixed left-3 bottom-3">
+              <a href="https://instagram.com/9cohort" target="_blank" rel="noreferrer">
+                <div
+                  className="bg-white w-10 h-10 rounded-full border-gray-1 shadow-lg flex items-center justify-center"
+                >
+                  <Image src="/icons/instagram.svg" width={20} height={20} />
+                </div>
+              </a>
             </div>
-            <div className="z-10 bg-white fixed right-0 bottom-0">
-              <button onClick={() => zoomIn()}>+</button>
-              <button onClick={() => zoomOut()}>-</button>
-              <button onClick={() => resetTransform()}>reset</button>
+            <div className="z-10 fixed right-3 bottom-3 flex flex-items">
+              <button
+                onClick={() => zoomIn()}
+                className="bg-white w-10 h-10 rounded-full border-gray-1 shadow-lg flex items-center justify-center ml-1"
+              >
+                <Image src="/icons/zoom-in.svg" width={20} height={20} />
+              </button>
+              <button
+                onClick={() => zoomOut()}
+                className="bg-white w-10 h-10 rounded-full border-gray-1 shadow-lg flex items-center justify-center ml-1"
+              >
+                <Image src="/icons/zoom-out.svg" width={20} height={20} />
+              </button>
+              <button
+                onClick={() => resetTransform()}
+                className="bg-white w-10 h-10 rounded-full border-gray-1 shadow-lg flex items-center justify-center ml-1"
+              >
+                <Image className="" src="/icons/rotate.svg" width={20} height={20} />
+              </button>
             </div>
             <TransformComponent>
               <Image src="/sunset.png" alt="test" width={windowSize.innerWidth} height={windowSize.innerHeight} />
