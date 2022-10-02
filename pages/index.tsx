@@ -4,14 +4,22 @@ import Image from 'next/image';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState(1400);
-  const [screenHeight, setScreenHeight] = useState(800);
+  const [windowSize, setWindowSize] = useState({ innerWidth: 1400, innerHeight: 800 });
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setScreenWidth(window.innerWidth);
-      setScreenHeight(window.innerHeight);
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
     }
+
+    if (typeof window !== 'undefined') {
+      handleWindowResize();
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
   }, []);
 
   return (
@@ -38,7 +46,7 @@ export default function Home() {
               <button onClick={() => resetTransform()}>reset</button>
             </div>
             <TransformComponent>
-              <Image src="/sunset.png" alt="test" width={screenWidth} height={screenHeight} />
+              <Image src="/sunset.png" alt="test" width={windowSize.innerWidth} height={windowSize.innerHeight} />
               {/* <div>Example text</div> */}
             </TransformComponent>
           </React.Fragment>
@@ -46,5 +54,10 @@ export default function Home() {
       </TransformWrapper>
     </div>
   )
+
+  function getWindowSize() {
+    const {innerWidth, innerHeight} = window;
+    return {innerWidth, innerHeight};
+  }
 }
 
