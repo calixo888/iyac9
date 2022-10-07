@@ -29,7 +29,7 @@ export default function ProfilePage() {
         <h1 className="text-5xl font-bold">{person.fields.Name}</h1>
         <div className="my-10 h-64 flex items-center gap-x-10 overflow-scroll">
           {/* <img className="h-full rounded-full shadow-md" src={person.fields.Headshot[0].url} alt="headshot" /> */}
-          {person.fields.Photo? person.fields.Photos.map((photo: any, i: any) => (
+          {person.fields.Photo ? person.fields.Photos.map((photo: any, i: any) => (
             <img className="h-full shadow-md rounded-md" src={photo.url} alt="photo" key={i} />
           )) : <div></div>}
         </div>
