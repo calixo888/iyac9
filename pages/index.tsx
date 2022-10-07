@@ -9,7 +9,7 @@ import People from "../components/People";
 export default function Home() {
   return (
     <div>
-      <div>
+      <div> 
         <HeaderNav/>
         <div className="z-10 fixed left-3 bottom-3">
           <Link href="https://instagram.com/9cohort" target="_blank" rel="noreferrer">
