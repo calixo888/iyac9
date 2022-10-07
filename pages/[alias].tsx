@@ -14,7 +14,7 @@ export default function ProfilePage() {
   useEffect(() => {
     axios.get('https://api.airtable.com/v0/appB1V2I4W0lblhpx/people/').then((response) => {
       const people = response.data.records;
-      const person = people.filter(p => p.fields.Alias === alias)[0];
+      const person = people.filter((p: any) => p.fields.Alias === alias)[0];
       setPerson(person);
     }).catch(e => console.error(e));
   }, [alias]);
