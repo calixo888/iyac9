@@ -2,12 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'PPEiko-Medium';
+  src: url('/fonts/PPEiko-Medium.otf');
+}
+
+@font-face {
+  font-family: 'PPTelegraf-Regular';
+  src: url('/fonts/PPTelegraf-Regular.otf');
+}
+
+@font-face {
+  font-family: 'PPTelegraf-Bold';
+  src: url('/fonts/PPTelegraf-Bold.otf');
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'PPEiko-Medium', "Bumble Bee", "Times New Roman", Georgia, Serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'PPTelegraf-Regular', 'PPTelegraf-Bold', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -26,5 +46,26 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+.blue-to-white-gradient {
+  height: 50px;
+  background: linear-gradient(to bottom, rgb(122,216,244), #ffffff 100%);
+}
+
+.desktop {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
   }
 }
