@@ -9,7 +9,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const { alias } = router.query;
 
-  const [person, setPerson] = useState<any[]>();
+  const [person, setPerson] = useState<any>();
 
   useEffect(() => {
     axios.get('https://api.airtable.com/v0/appB1V2I4W0lblhpx/people/').then((response) => {
@@ -29,7 +29,7 @@ export default function ProfilePage() {
         <h1 className="text-5xl font-bold">{person.fields.Name}</h1>
         <div className="my-10 h-64 flex items-center gap-x-10 overflow-scroll">
           {/* <img className="h-full rounded-full shadow-md" src={person.fields.Headshot[0].url} alt="headshot" /> */}
-          {person.fields.Photos.map((photo, i) => (
+          {person.fields.Photos.map((photo: any, i: any) => (
             <img className="h-full shadow-md rounded-md" src={photo.url} alt="photo" key={i} />
           ))}
         </div>
