@@ -23,7 +23,7 @@ export default function Mural() {
   }, []);
 
   return (
-    <div className="w-screen bg-blue-100 relative">
+    <div className="w-screen relative">
       <TransformWrapper
         initialScale={1}
         // initialPositionX={200}

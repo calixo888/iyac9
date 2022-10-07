@@ -49,6 +49,11 @@ a {
   }
 }
 
+.blue-to-white-gradient {
+  height: 50px;
+  background: linear-gradient(to bottom, rgb(122,216,244), #ffffff 100%);
+}
+
 .desktop {
   display: block;
 }

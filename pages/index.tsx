@@ -36,8 +36,9 @@ export default function Home() {
 
       <div>
         <img className="desktop" src="/header-desktop.png" />
-        <img className="mobile" src="/header-mobile.png" />
+        <img className="mobile w-full" src="/header-mobile.png" />
       </div>
+      <div className="blue-to-white-gradient"></div>
       <div id="mural" className="desktop">
         <Mural/>
       </div>
