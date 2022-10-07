@@ -14,7 +14,7 @@ export default function People() {
     }).catch(e => console.error(e));
   }, []);
 
-  return people && (
+  return people ? (
     <div className="py-16 px-5 max-w-5xl mx-auto">
       <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-16">
         {people.map((person, i) => (
@@ -28,6 +28,6 @@ export default function People() {
         ))}
       </div>
     </div>
-  )
+  ) : "";
 }
 
