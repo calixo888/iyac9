@@ -23,7 +23,7 @@ export default function Mural() {
   }, []);
 
   return (
-    <div className="w-screen h-screen bg-blue-100 relative">
+    <div className="w-screen bg-blue-100 relative">
       <TransformWrapper
         initialScale={1}
         // initialPositionX={200}
@@ -53,7 +53,7 @@ export default function Mural() {
               </button>
             </div>
             <TransformComponent>
-              <Image src="/sunset.png" alt="test" width={windowSize.innerWidth} height={windowSize.innerHeight} />
+              <Image src="/mural.png" alt="test" width={windowSize.innerWidth} height={windowSize.innerWidth * 0.66} />
               {/* <div>Example text</div> */}
             </TransformComponent>
           </React.Fragment>

@@ -35,9 +35,10 @@ export default function Home() {
       </div>
 
       <div>
-        <img src="/header.jpeg" />
+        <img className="desktop" src="/header-desktop.png" />
+        <img className="mobile" src="/header-mobile.png" />
       </div>
-      <div id="mural">
+      <div id="mural" className="desktop">
         <Mural/>
       </div>
       <div id="people">
