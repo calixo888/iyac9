@@ -1,12 +1,23 @@
 import type { NextPage } from 'next';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import axios from "axios";
 import Mural from "../components/Mural";
 import People from "../components/People";
 
-export default function Home() {
-  
+axios.defaults.headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_KEY}`;
 
+export default function Home() {
+  const [people, setPeople] = useState();
+
+  useEffect(() => {
+    axios.get('https://api.airtable.com/v0/appB1V2I4W0lblhpx/people/').then((response) => {
+      const people = response.data;
+      setPeople(people);
+      console.log("people", people)
+    }).catch(e => console.error(e));
+  }, []);
+  
   return (
     <div className="">
       <div>
