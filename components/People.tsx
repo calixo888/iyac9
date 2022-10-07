@@ -5,7 +5,7 @@ import axios from "axios";
 axios.defaults.headers['Authorization'] = `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_API_KEY}`;
 
 export default function Profiles() {
-  const [people, setPeople] = useState();
+  const [people, setPeople] = useState<any[]>();
 
   useEffect(() => {
     axios.get('https://api.airtable.com/v0/appB1V2I4W0lblhpx/people/').then((response) => {

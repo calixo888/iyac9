@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import HeaderNav from '../components/HeaderNav';
 import Mural from "../components/Mural";
-import People from "../components/People.jsx";
+import People from "../components/People";
 
 export default function Home() {
   return (

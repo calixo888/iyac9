@@ -9,7 +9,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const { alias } = router.query;
 
-  const [person, setPerson] = useState();
+  const [person, setPerson] = useState<any[]>();
 
   useEffect(() => {
     axios.get('https://api.airtable.com/v0/appB1V2I4W0lblhpx/people/').then((response) => {
